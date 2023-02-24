@@ -12,34 +12,30 @@ struct bale
 
 int main()
 {
-    int n, i, j, ct;
-    long long t;
+    long long t, i, j;
+    int n;
     cin >> n >> t;
-    bool days[t] = {false};
     bale bales[n];
     for (i = 0; i < n; i++)
     {
         cin >> bales[i].day >> bales[i].amt;
     }
-    for (i = 0; i < n; i++)
+    j = 0;
+    long long dates = 0, inv = 0;
+    for (i = 1; i <= t; i++)
     {
-        for (j = bales[i].day - 1; j < bales[i].day + bales[i].amt - 1; j++)
+        if (i == bales[dates].day)
         {
-            if (j < t)
-            {
-                days[j] = true;
-            }
+            inv += bales[dates].amt;
+            dates++;
+        }
+        if (inv > 0)
+        {
+            inv--;
+            j++;
         }
     }
-    ct = 0;
-    for (i = 0; i < t; i++)
-    {
-        if (days[i])
-        {
-            ct++;
-        }
-    }
-    cout << ct;
+    cout << j;
     system("pause");
     return 0;
 }
