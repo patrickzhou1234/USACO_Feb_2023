@@ -12,7 +12,8 @@ struct bale
 
 int main()
 {
-    long long n, t, i, j, ct;
+    int n, i, j, ct;
+    long long t;
     cin >> n >> t;
     bool days[t] = {false};
     bale bales[n];
@@ -31,6 +32,10 @@ int main()
             else
             {
                 bales[i].amt++;
+            }
+            if (j == t)
+            {
+                break;
             }
         }
     }
