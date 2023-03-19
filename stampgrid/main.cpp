@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    int t, i, tmpn;
+    int t, i, tmpn, j;
     cin >> t;
 
     for (i = 0; i < t; i++)
@@ -15,7 +15,7 @@ int main()
         cin >> tmpn;
         for (j = 0; j < tmpn; j++)
         {
-            cin >>
+            cin >> t;
         }
     }
     system("pause");
